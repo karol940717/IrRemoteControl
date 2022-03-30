@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">irRemoteControl</string>
+    <string name="tv">TV</string>
+    <string name="amp">AMP</string>
+</resources>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+
+    <ImageButton
+        android:id="@+id/btnPwrTv"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/power_on"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btnPwrAmp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/power_on"
+        app:layout_constraintBottom_toTopOf="@+id/btnVolDown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btnVolDown"
+        android:layout_width="140dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="70dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/vol_down"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnVolUp"
+        app:layout_constraintStart_toStartOf="@+id/btnPwrAmp"
+        app:layout_constraintTop_toBottomOf="@+id/btnPwrAmp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btnVolUp"
+        android:layout_width="140dp"
+        android:layout_height="150dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/vol_up"
+        app:layout_constraintBottom_toBottomOf="@+id/btnVolDown"
+        app:layout_constraintEnd_toEndOf="@+id/btnPwrAmp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnPwrTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOkTv" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/amp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnPwrAmp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPwrTv" />
+
+    <ImageButton
+        android:id="@+id/btnOkTv"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="2dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ok_button"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
