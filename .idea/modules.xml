@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/irRemoteControl.iml" filepath="$PROJECT_DIR$/.idea/modules/irRemoteControl.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/irRemoteControl.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/irRemoteControl.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RemoteControl.iml" filepath="$PROJECT_DIR$/.idea/modules/RemoteControl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/RemoteControl.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/RemoteControl.app.iml" />
     </modules>
   </component>
 </project>
