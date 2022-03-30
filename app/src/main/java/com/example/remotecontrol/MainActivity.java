@@ -1,10 +1,12 @@
 package com.example.remotecontrol;
+
 import android.app.Activity;
 import android.hardware.ConsumerIrManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -37,15 +39,15 @@ public class MainActivity extends Activity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         irManager = (ConsumerIrManager) getSystemService(CONSUMER_IR_SERVICE);
 
+//        buttonPwrTv = findViewById(R.id.btnPwrTv);
+//        buttonPwrAmp= findViewById(R.id.btnPwrAmp);
+//        buttonVolDown= findViewById(R.id.btnVolDown);
+//        buttonVolUp = findViewById(R.id.btnVolUp);
 //        buttonPwrAmp.findViewById(R.id.btnPwrAmp);
 //        buttonPwrAmp.setOnClickListener(view -> {
 //            int[] pattern5 = {3456, 1728, 432, 432, 432, 1296, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 1296, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 1296, 432, 432, 432, 1296, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 1296, 432, 432, 432, 1296, 432, 1296, 432, 1296, 432, 1296, 432, 432, 432, 432, 432, 1296, 432, 432, 432, 1296, 432, 1296, 432, 1296, 432, 432, 432, 432, 432, 1296, 432, 73980, 3456, 1728, 432, 432, 432, 1296, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 1296, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 1296, 432, 432, 432, 1296, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 432, 1296, 432, 432, 432, 1296, 432, 1296, 432, 1296, 432, 1296, 432, 432, 432, 432, 432, 1296, 432, 432, 432, 1296, 432, 1296, 432, 1296, 432, 432, 432, 432, 432, 1296, 432, 68580};
 //           irManager.transmit(37010, pattern5);
 //        });
-//        buttonPwrTv = findViewById(R.id.btnPwrTv);
-//        buttonPwrAmp= findViewById(R.id.btnPwrAmp);
-//        buttonVolDown= findViewById(R.id.btnVolDown);
-//        buttonVolUp = findViewById(R.id.btnVolUp);
 
         findViewById(R.id.btnPwrTv).setOnClickListener(new ClickListener(hex2ir(CMD_TV_POWER)));
         findViewById(R.id.btnPwrAmp).setOnClickListener(new ClickListener(hex2ir(CMD_AMP_POWER)));
@@ -53,6 +55,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.btnVolUp).setOnClickListener(new ClickListener(hex2ir(CMD_AMP_VOLUP)));
         findViewById(R.id.btnOkTv).setOnClickListener(new ClickListener(hex2ir(CMD_TV_OK)));
     }
+
     private IRCommand hex2ir(final String irData) {
         List<String> list = new ArrayList<>(Arrays.asList(irData.split(" ")));
         list.remove(0); // dummy
@@ -69,6 +72,7 @@ public class MainActivity extends Activity {
         }
         return new IRCommand(frequency, pattern);
     }
+
     private class ClickListener implements View.OnClickListener {
         private final IRCommand cmd;
 
@@ -78,16 +82,6 @@ public class MainActivity extends Activity {
 
         @Override
         public void onClick(final View view) {
-            //mp.start();
-//            ToneGenerator toneGenerator = new ToneGenerator(1, 100);
-//            toneGenerator.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 200); //200 is duration in ms
-
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                vibe.vibrate(VibrationEffect.createOneShot(150, VibrationEffect.DEFAULT_AMPLITUDE));
-//            } else {
-//                //deprecated in API 26
-//                vibe.vibrate(150);
-//            }
             try {
                 android.util.Log.d("Remote", "frequency: " + cmd.freq);
                 android.util.Log.d("Remote", "pattern: " + Arrays.toString(cmd.pattern));
@@ -98,6 +92,7 @@ public class MainActivity extends Activity {
             }
         }
     }
+
     private static class IRCommand {
         private final int freq;
         private final int[] pattern;
